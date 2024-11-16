@@ -47,6 +47,8 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
 
         img{
             height: 3vh;
@@ -84,6 +86,7 @@
         color: #ffffff;
         background-color:#5A99D1;
         cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
 }
 
@@ -202,6 +205,7 @@
         color: #ffffff;
         background-color:#5A99D1;
         cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
 }
 
@@ -235,6 +239,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        font-size: 14px;
     }
 
  
@@ -255,5 +260,9 @@
 
 .containerInventory::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.active{
+    box-shadow: rgb(125 189 255 / 25%) 0px 30px 60px -12px inset, rgb(7 98 127 / 30%) 0px 18px 36px -18px inset;
 }
 

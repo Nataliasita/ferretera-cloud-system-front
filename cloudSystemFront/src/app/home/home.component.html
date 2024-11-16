@@ -2,11 +2,11 @@
 <section class="containerGeneral">
     <p class="textoBienvenida">Bienvenido a nuestra innovadora plataforma de manejo de inventarios en la nube, diseñada especialmente para ferreterías. Con nuestro sistema, podrás acceder, controlar y actualizar tu inventario desde cualquier lugar, de manera rápida y sencilla. Nuestra solución en la nube te permite gestionar el inventario en tiempo real, evitando faltantes y optimizando la reposición de tus productos.</p>
     <div class="containerBotonera">
-        <button type="button" (click)="loadInventory()">
+        <button type="button" (click)="loadInventory()" [ngClass]="{'active': viewInventory}">
             <img src="../../assets/images/lista.png" alt="image-inventory">
             Inventario
         </button>
-        <button style="margin-left: 2vw;" type="button" (click)="loadUsers()">
+        <button style="margin-left: 2vw;" type="button" (click)="loadUsers()" [ngClass]="{'active': viewUsers}" >
             <img src="../../assets/images/users.png" alt="image-user">
             Usuarios
         </button>
