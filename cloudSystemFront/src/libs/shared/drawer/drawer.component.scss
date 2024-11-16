@@ -1,0 +1,132 @@
+
+.drawer-container {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    background-color: #000a445d;
+    top: 0;
+    z-index: 1000;
+    font-family: "Poppins", sans-serif;
+    color: #333333;
+}
+
+
+.drawer {
+    width: 30vw;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    top: 0;
+    animation: slide-in 0.3s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    from {
+        right: -30vw; 
+    }
+    to {
+        right: 0; 
+    }
+}
+
+.drawer.close {
+    animation: slide-out 0.3s ease-in-out forwards;
+}
+
+@keyframes slide-out {
+    from {
+        right: 0; 
+    }
+    to {
+        right: -30vw; 
+    }
+}
+
+.btnClose{
+    border: none;
+    background: transparent;
+    float: right;
+    img{
+        height: 22px;
+
+    }
+}
+
+.btnClose:hover{
+    cursor: pointer;
+}
+
+.title{
+    color: #5A99D1;
+}
+
+.containerButtons{
+    margin-top: 4%;
+}
+.btnCreateActive{
+    width: 8vw;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color:#5A99D1;
+    height: 4vh;
+    float: right;
+    margin-bottom: 2%;
+    border: none;
+}
+
+.btnCreateActive:hover{
+    cursor: pointer;
+}
+
+.btnCreateInactive{
+    width: 8vw;
+    border-radius: 20px;
+    border: #5A99D1 1px solid;
+    color: #5A99D1;
+    background-color: #ffffff;
+    height: 4vh;
+    float: right;
+    margin-left: 1vw;
+    margin-bottom: 2%;
+}
+
+.btnCreateInactive:hover{
+    cursor: pointer;
+}
+
+.formUser{
+    margin-top: 5%;
+    width: 100%;
+    background: aliceblue;
+    border-radius: 6px;
+    padding: 0 2%;
+}
+
+.infoForm{
+    height: 55vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    input, select{
+        display: flex;
+        border: none;
+        outline: none;
+        border-bottom: #5A99D1 1px solid;
+        margin-left: 5px;
+        width: 26vw;
+        height: 2.5vh;
+    }
+
+    small{
+        color:#da2222;
+    }
+}

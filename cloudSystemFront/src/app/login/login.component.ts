@@ -22,18 +22,24 @@ export class LoginComponent implements OnInit {
   }
 
   stateLogin(){
-    if (this.username === 'usuario' && this.password === 'contraseña') {
-      this.authService.login(); // Cambia el estado a autenticado
-      this.router.navigate(['/home']); // Redirige a la página de inicio u otra página segura
+    if (this.loginForm.valid) {
+      const { username, password } = this.loginForm.value;
+
+      if (username === 'UserTest' && password === '12345*A') {
+        this.authService.login(); 
+        this.router.navigate(['/home']);
+      } else {
+        console.log('Credenciales incorrectas');
+      }
     } else {
-      console.log('Credenciales incorrectas');
+      console.log('Formulario inválido');
     }
   }
 
   validationLogin(){
     this.loginForm = this.fb.group({
-      username: ['', Validators.required], 
-      password: ['', Validators.required] 
+      username: ['UserTest', Validators.required], 
+      password: ['12345*A', Validators.required] 
     });
   }
 

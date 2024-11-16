@@ -1,0 +1,259 @@
+.containerGeneral{
+    width: 100%;
+    height: 89vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    padding: 3%;
+}
+
+.textoBienvenida{
+    width: 70%;
+    text-align: justify;
+    color: #696969;
+    font-weight: 500;
+}
+
+.footer{
+    width: 100%;
+    height: 3vh;
+    color: #696969;
+    background-color: #EAEAEA;
+    font-size: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.containerBotonera{
+    width: 70%;
+    height: 8vh;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 2% 0;
+    
+    button{
+        height: 7vh;
+        width: 10vw;
+        border: none;
+        border-bottom: 2px solid #5A99D1;
+        color: #5A99D1;
+        background: #ffffff;
+        font-family: "Poppins", sans-serif;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            height: 3vh;
+            margin-right: 10px;
+        }
+    }
+
+    button:hover{
+        background: #5A99D1;
+        color:#ffffff;
+        cursor: pointer;
+    }
+
+    button:hover img {
+        filter: brightness(3.5);
+    }
+}
+
+.containerUsers{
+    width: 70%;
+    height: 65%;
+
+    .btnCreateUser{
+        width: 8vw;
+        border-radius: 20px;
+        border: #5A99D1 1px solid;
+        color: #5A99D1;
+        background-color: #ffffff;
+        height: 4vh;
+        float: right;
+        margin-bottom: 2%;
+    }
+
+    .btnCreateUser:hover{
+        color: #ffffff;
+        background-color:#5A99D1;
+        cursor: pointer;
+    }
+}
+
+.user-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 20px 0;
+    font-size: 14px;
+    text-align: left; 
+    color: #333; 
+
+    thead {
+      background-color: #4777a1; 
+    }
+
+    thead tr{
+        display: flex;
+        justify-content:flex-start;
+    }
+
+    th {
+      color: #ffffff;
+      padding: 10px; 
+      text-transform: uppercase; 
+      font-weight: bold; 
+      font-size: 12px; 
+      display: flex;
+      align-items: center;
+    }
+
+    td {
+      width: 20vw;
+      padding: 10px; 
+      border-bottom: 1px solid #e0e0e0; 
+    }
+
+    tbody {
+        display: block;
+        height: 35vh; 
+        overflow-y: auto; 
+        width: 100%;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #f9f9f9; 
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    tbody tr:hover {
+      background-color: #eaeaea; 
+      cursor: pointer;
+    }
+
+    .btnAction{
+        border: none;
+        background: transparent;
+        margin-top: 4px;
+        img{
+            height: 22px;
+        }
+    }
+
+    .btnAction:hover{
+        cursor: pointer;
+    }
+
+    .btnAction:hover img {
+        filter: saturate(3);
+    }
+
+    tbody::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    tbody::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    tbody::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+    
+    tbody::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    @media (max-width: 768px) {
+    font-size: 12px;
+
+    th, td {
+        padding: 8px;
+    }
+
+    }
+}
+.containerInventoryGeneral{
+    width: 70%;
+    height: 65%;
+
+    .btnCreateInventory{
+        width: 8vw;
+        border-radius: 20px;
+        border: #5A99D1 1px solid;
+        color: #5A99D1;
+        background-color: #ffffff;
+        height: 4vh;
+        float: right;
+        margin-bottom: 2%;
+    }
+
+    .btnCreateInventory:hover{
+        color: #ffffff;
+        background-color:#5A99D1;
+        cursor: pointer;
+    }
+}
+
+.containerInventory{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 20px; 
+    padding: 20px;
+    overflow-y: auto;
+
+    .containerCardInventary{
+        border: #9F9F9F 1.5px solid;
+        display: inline-flex;
+        height: 16vh;
+        align-items: center;
+        justify-content: center;
+        color: #9F9F9F;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        img{
+            height: 10vh;
+            margin-right: 5px;
+        }
+    }
+
+    .infoInventary{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+ 
+}
+
+.containerInventory::-webkit-scrollbar {
+    width: 6px;
+}
+
+.containerInventory::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.containerInventory::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.containerInventory::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+

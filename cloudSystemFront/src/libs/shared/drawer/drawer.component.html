@@ -1,0 +1,133 @@
+<div class="drawer-container">
+
+    <div class="drawer">
+        <button class="btnClose" type="button" (click)="closeDrawer()">
+          <img src="../../assets/icons/cerrar.png" alt="btn-cerrar">
+        </button>
+
+        <h2 *ngIf="this.inventary == false" class="title">{{!this.user? 'Crear Usuario': 'Editar Usuario'}}</h2>
+        <h2 *ngIf="this.inventary == true" class="title">{{this.inventary? 'Crear Inventario': ''}}</h2>
+
+          <form *ngIf="this.inventary == false" class="formUser" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="infoForm">
+              <div>
+                <label for="id">*Id:</label>
+                <input id="id" formControlName="id" type="text" />
+                <div *ngIf="userForm.get('id')?.invalid && userForm.get('id')?.touched">
+                  <small>El ID es obligatorio.</small>
+                </div>
+              </div>
+  
+              <div>
+                <label for="nombre">*Nombre</label>
+                <input id="nombre" formControlName="nombre" type="text" />
+                <div *ngIf="userForm.get('nombre')?.invalid && userForm.get('nombre')?.touched">
+                  <small>El nombre es obligatorio.</small>
+                </div>
+              </div>
+  
+  
+              <div>
+                <label for="email">*Email</label>
+                <input id="email" formControlName="email" type="email" />
+                <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+                  <small>El email es obligatorio y debe ser válido.</small>
+                </div>
+              </div>
+  
+              <div>
+                <label for="celular">*Celular</label>
+                <input id="celular" formControlName="celular" type="text" />
+                <div *ngIf="userForm.get('celular')?.invalid && userForm.get('celular')?.touched">
+                  <small>El celular es obligatorio y debe contener solo números.</small>
+                </div>
+              </div>
+  
+              <div>
+                <label for="fecha_creacion">*Fecha de Creación</label>
+                <input id="fecha_creacion" formControlName="fecha_creacion" type="date" />
+                <div *ngIf="userForm.get('fecha_creacion')?.invalid && userForm.get('fecha_creacion')?.touched">
+                  <small>La fecha de creación es obligatoria.</small>
+                </div>
+              </div>
+            
+              <div>
+                <label for="estado">*Estado</label>
+                <select id="estado" formControlName="estado">
+                  <option value="">Seleccione...</option>
+                  <option value="activo">Activo</option>
+                  <option value="inactivo">Inactivo</option>
+                </select>
+                <div *ngIf="userForm.get('estado')?.invalid && userForm.get('estado')?.touched">
+                  <small>El estado es obligatorio.</small>
+                </div>
+              </div>
+  
+              <div>
+                <label for="rol">*Rol:</label>
+                <input id="rol" formControlName="rol" type="text" />
+                <div *ngIf="userForm.get('rol')?.invalid && userForm.get('rol')?.touched">
+                  <small>El rol es obligatorio.</small>
+                </div>
+              </div>
+  
+              <div>
+                <label for="permisos">Permisos:</label>
+                <input id="permisos" formControlName="permisos" type="text" placeholder="Separar por comas" />
+              </div>
+            </div>
+            
+
+            <div class="containerButtons">
+                <button type="button" class="btnCreateInactive" (click)="closeDrawer()"> Cancelar</button>
+                <button *ngIf="this.user !== null" type="button" class="btnCreateActive" (click)="onEditUser()"> Editar</button>
+                <button *ngIf="this.user == null" type="submit" [disabled]="userForm.invalid" class="btnCreateActive">Crear</button>
+            </div>
+
+          </form>
+
+          <form *ngIf="this.inventary == true" [formGroup]="inventarioForm" class="formUser" (ngSubmit)="onSubmitInventary()">
+            <div class="infoForm">
+              <div>
+                <label for="inventario_id">Inventario ID:</label>
+                <input id="inventario_id" formControlName="inventario_id" type="number" />
+                <div *ngIf="inventarioForm.get('inventario_id')?.invalid && inventarioForm.get('inventario_id')?.touched">
+                  <small>El ID del inventario es obligatorio y debe ser mayor a 0.</small>
+                </div>
+              </div>
+            
+              <div>
+                <label for="producto_id">Producto ID:</label>
+                <input id="producto_id" formControlName="producto_id" type="number" />
+                <div *ngIf="inventarioForm.get('producto_id')?.invalid && inventarioForm.get('producto_id')?.touched">
+                  <small>El ID del producto es obligatorio y debe ser mayor a 0.</small>
+                </div>
+              </div>
+            
+              <div>
+                <label for="cantidad_disponible">Cantidad Disponible:</label>
+                <input id="cantidad_disponible" formControlName="cantidad_disponible" type="number" />
+                <div *ngIf="inventarioForm.get('cantidad_disponible')?.invalid && inventarioForm.get('cantidad_disponible')?.touched">
+                  <small>La cantidad disponible es obligatoria y debe ser mayor o igual a 0.</small>
+                </div>
+              </div>
+            
+              <div>
+                <label for="fecha_actualizacion">Fecha de Actualización:</label>
+                <input id="fecha_actualizacion" formControlName="fecha_actualizacion" type="date" />
+                <div *ngIf="inventarioForm.get('fecha_actualizacion')?.invalid && inventarioForm.get('fecha_actualizacion')?.touched">
+                  <small>La fecha de actualización es obligatoria.</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="containerButtons">
+              <button type="button" class="btnCreateInactive" (click)="closeDrawer()"> Cancelar</button>
+              <button type="submit" [disabled]="inventarioForm.invalid" class="btnCreateActive" >Crear inventario</button>
+            </div>
+
+          </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+.headerContainer{
+    background: rgb(0, 12, 39);
+    width: 100%;
+    height: 8vh;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+
+    img{
+        height: 7vh;
+    }
+}
+
+.infoUser{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        height: 3.5vh;
+    }
+
+    span{
+        color: #ffffff;
+        font-weight: 600;
+        margin-left: 10px;
+        font-family: "Poppins", sans-serif;
+    }
+}

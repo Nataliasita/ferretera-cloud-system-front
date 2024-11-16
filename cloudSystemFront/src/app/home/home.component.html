@@ -1,1 +1,82 @@
-<p>home works!</p>
+<app-header></app-header>
+<section class="containerGeneral">
+    <p class="textoBienvenida">Bienvenido a nuestra innovadora plataforma de manejo de inventarios en la nube, diseñada especialmente para ferreterías. Con nuestro sistema, podrás acceder, controlar y actualizar tu inventario desde cualquier lugar, de manera rápida y sencilla. Nuestra solución en la nube te permite gestionar el inventario en tiempo real, evitando faltantes y optimizando la reposición de tus productos.</p>
+    <div class="containerBotonera">
+        <button type="button" (click)="loadInventory()">
+            <img src="../../assets/images/lista.png" alt="image-inventory">
+            Inventario
+        </button>
+        <button style="margin-left: 2vw;" type="button" (click)="loadUsers()">
+            <img src="../../assets/images/users.png" alt="image-user">
+            Usuarios
+        </button>
+    </div>
+    <div class="containerUsers" *ngIf="viewUsers">
+        <button type="button" class="btnCreateUser" (click)="crearUser()">Crear usuario</button>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th style="width: 2vw;">#</th>
+                    <th style="width: 7.5vw;">Nombre</th>
+                    <th style="width: 14vw;">Email</th>
+                    <th style="width: 8vw;">Celular</th>
+                    <th style="width: 5.4vw;">Fecha de creación</th>
+                    <th style="width: 7.5vw;">Estado</th>
+                    <th style="width: 7.5vw;">Rol</th>
+                    <th>Permisos</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users; let i = index">
+                    <td style="width: 3vw;">{{ i + 1 }}</td> 
+                    <td >{{ user.nombre }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.celular }}</td>
+                    <td>{{ user.fecha_creacion | date }}</td>
+                    <td>{{ user.estado }}</td>
+                    <td>{{ user.rol }}</td>
+                    <td>
+                        <ul>
+                           <li *ngFor="let permiso of user.permisos">{{ permiso }}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <button  type="button"  class="btnAction" (click)="editUser(user, i)">
+                            <img src="../../assets/icons/editar.png" alt="btn-editar">
+                        </button>
+                        <button type="button" class="btnAction" style="margin-left: 10px;" (click)="deleteUser(user)">
+                            <img src="../../assets/icons/eliminar.png" alt="btn-eliminar">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="containerInventoryGeneral"*ngIf="viewInventory">
+
+        <button type="button" class="btnCreateInventory" (click)="crearInventary()">Crear inventario</button>
+        <div class="containerInventory">
+            <div class="containerCardInventary" *ngFor="let item of products; let i = index">
+                <img src="../../assets/icons/box.png" alt="icon-box">
+                <div class="infoInventary">
+                    <span>Id inventario {{ item.inventario_id }}</span>
+                    <span>Id producto {{ item.producto_id }}</span>
+                    <span>Cantidad disponible {{ item.cantidad_disponible}}</span>
+                    <span>Fecha actualización {{ item.fecha_actualizacion | date}}</span>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+
+</section>
+<footer class="footer">
+    <span>Copyright © 2024 - FerreExpress. Todos los derechos reservados</span>
+</footer>
+
+<ng-container *ngIf="openedDrawer">
+    <app-drawer [user]="this.userSelect" (closed)="onDrawerClosed()" [inventary]="this.addInventary"></app-drawer>
+</ng-container>

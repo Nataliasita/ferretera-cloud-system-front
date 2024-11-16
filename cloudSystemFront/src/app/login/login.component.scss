@@ -1,0 +1,78 @@
+.containerGeneral{
+    background: rgb(0, 12, 39);
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/images/photoLoginOF.jpg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 60% 100%;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+}
+
+.containerGeneral::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    pointer-events: none; 
+}
+
+.containerLogin{
+    width: 40vw;
+    height: 80%;
+    padding: 3% 0;
+    background-color: rgb(9, 60, 128);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    img{
+        height: 11vh;
+        margin-bottom: 5%;
+    }
+}
+
+.containerData{
+    width: 22vw;
+    color: white;
+    margin-bottom: 5%;
+
+    input{
+        width: 100%;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid white;
+        background: transparent;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+    }
+
+}
+
+.btnLogin{
+    float: right;
+    width: 9vw;
+    height: 5vh;
+    background: linear-gradient(0.25turn, #00b3ff, #3cb2f6);
+    border: none;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    border-radius: 4px;
+    margin-top: 5%;
+}
+
+.btnLogin:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
